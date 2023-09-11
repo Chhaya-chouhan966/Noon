@@ -26,6 +26,7 @@ const AllCategory = () => {
             >
                 <Image src={dropDown} alt="Your Image Alt Text" w={"28px"} h={"28px"} color={"blue"} />
             </Button>
+        
         </Flex>
     )
 }
