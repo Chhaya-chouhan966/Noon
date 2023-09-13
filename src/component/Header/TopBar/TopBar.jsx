@@ -25,7 +25,7 @@ const TopBar = () => {
             maxW={"100%"}
             display="flex"
             alignItems="center">
-                
+
             <Image src="https://f.nooncdn.com/s/app/com/noon/design-system/logos/noon-logo-en.svg" w={"86px"} h="24px" />
 
             {/* Dubai Name with symbols */}
@@ -57,7 +57,7 @@ const TopBar = () => {
             {/* Search Baar */}
             <Box>
                 <Input
-                    w={"760px"}
+                    w={"800px"}
                     h={"32px"}
                     borderRadius={"5px"}
                     outline={"none"}
