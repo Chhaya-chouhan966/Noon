@@ -8,6 +8,7 @@
     z-index: 1000; /* Ensure it's above other content */
   }
   .custom-menu-list{
-    width: 100%;
-    
+    max-width: 1000px;
+  overflow-x: unset;
   }
+
