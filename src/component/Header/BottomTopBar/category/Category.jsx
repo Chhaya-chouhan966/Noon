@@ -22,10 +22,8 @@ const Category = () => {
                 // scrollbarWidth: "none", // Hide vertical scrollbar for Firefox
             }}
         >
-       
-            {Array.from({ length: 6 }).map((_, index) => (
-                <AllProduct key={index} />
-            ))}
+            <AllProduct />
+
         </Box>
     )
 }
