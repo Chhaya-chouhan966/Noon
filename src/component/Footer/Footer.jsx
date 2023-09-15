@@ -5,12 +5,12 @@ import FooterTop from './footerTop/FooterTop'
 
 const Footer = () => {
     return (
-        <Container maxW={'container.ls'} border={"2px solid red"}>
-            <VStack>
-                <FooterBottom />
-                <FooterTop />
-            </VStack>
-
+        <Container
+            maxW={'container.ls'} 
+            // border={"2px solid red"}
+            >
+            <FooterTop />
+            <FooterBottom />
         </Container>
     )
 }
