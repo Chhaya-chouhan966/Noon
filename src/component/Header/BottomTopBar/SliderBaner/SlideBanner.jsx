@@ -11,6 +11,7 @@ const SlideBanner = () => {
             px={"80px"}
         >
             Category
+            
         </Flex>
     )
 }

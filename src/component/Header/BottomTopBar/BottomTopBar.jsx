@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+    Box,
     Container,
     Flex
 } from '@chakra-ui/react'
@@ -10,10 +11,8 @@ import AllCategory from './allCategry/AllCategory'
 
 const BottomTopBar = () => {
     return (
-        <Container
+        <Box
             // border={"2px solid red"}
-
-            maxW={"full"}
             h={"7vh"}
             bg={"#fcfbf4"}
             px={0}
@@ -21,9 +20,9 @@ const BottomTopBar = () => {
             <Flex>
                 <AllCategory />
                 <Category />
-                <SlideBanner/>
+                <SlideBanner />
             </Flex>
-        </Container>
+        </Box>
     )
 }
 
