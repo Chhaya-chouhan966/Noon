@@ -8,7 +8,7 @@ import Header from './component/Header/Header';
 function App() {
   return (
     <Box className="App" border={"2px solid green"}>
-      {/* <Header /> */}
+      <Header />
       <Footer />
     </Box>
   );
