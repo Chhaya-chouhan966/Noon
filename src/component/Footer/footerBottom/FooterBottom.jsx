@@ -1,4 +1,4 @@
-import { Box, HStack, Tooltip, Text, Flex, Image, UnorderedList, ListItem, Button } from '@chakra-ui/react'
+import { Box, HStack, Tooltip, Text, Flex, Image, Button } from '@chakra-ui/react'
 import React from 'react'
 
 const FooterBottom = () => {
@@ -20,47 +20,51 @@ const FooterBottom = () => {
         "Privacy Policy",
         "Consumer Rights"]
     return (
-        <Box>
-            <Box py={"40px"}>
+        <Box  bg="#f7f7fa" border={"2px solid #eff0f6"}>
 
+            <HStack
+                // border={"2px solid green"}
+                flexDirection={{md:"unset", base:"column"}}
+                justifyContent={{md:"space-between", base:'center'}}
+                alignItems={{md:"flex-start", base:"center"}}
+                py={"30px"}
+            >
+                <Tooltip
+                    bg={"white"}
+                    boxShadow={"0 0 5px gray"}
+                    textAlign={"center"}
+                    color={"black"}
+                    hasArrow
+                    w={"200px"}
+                    h={'auto'}
+                    label='Top hello this side from dubai Top hello this side from dubai Top hello this side from dubai  '
+                    placement='top-start'>
+                    <Button bg={"none"} fontSize={"12px"} color={"#7E859B"}>© 2023 noon. All Rights Reserved</Button>
+                </Tooltip>
+                <Flex columnGap={5}>
+                    {
+                        a.map((ele) => {
+                            return <Image
+                                w={"41px"}
+                                h={"26px"}
+                                src={ele} />
+                        })
+                    }
 
-                <HStack justifyContent={"space-between"} alignItems={"flex-start"}>
-                    <Tooltip
-                        bg={"white"}
-                        boxShadow={"0 0 5px gray"}
-                        textAlign={"center"}
-                        color={"black"}
-                        hasArrow
-                        w={"200px"}
-                        h={'auto'}
-                        label='Top hello this side from dubai Top hello this side from dubai Top hello this side from dubai  '
-                        placement='top-start'>
-                        <Button bg={"none"} fontSize={"12px"} color={"#7E859B"}>© 2023 noon. All Rights Reserved</Button>
-                    </Tooltip>
-                    <Flex columnGap={5}>
-                        {
-                            a.map((ele) => {
-                                return <Image
-                                    w={"41px"}
-                                    h={"26px"}
-                                    src={ele} />
-                            })
-                        }
-
-                    </Flex>
-                    <Flex fontSize={"12px"} columnGap={3}>
-                        {items.map((item, index) => (
-                            <Text
-                                key={index}
-                                _hover={{ textDecoration: "underline", cursor: "pointer" }}
-                            >
-                                {item}
-                            </Text>
-                        ))}
-                    </Flex>
-                </HStack>
-            </Box>
+                </Flex>
+                <Flex fontSize={"12px"} columnGap={3}>
+                    {items.map((item, index) => (
+                        <Text
+                            key={index}
+                            _hover={{ textDecoration: "underline", cursor: "pointer" }}
+                        >
+                            {item}
+                        </Text>
+                    ))}
+                </Flex>
+            </HStack>
         </Box>
+
     )
 }
 

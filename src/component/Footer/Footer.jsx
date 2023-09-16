@@ -1,17 +1,22 @@
-import { Container, VStack } from '@chakra-ui/react'
+import { Container, Box } from '@chakra-ui/react'
 import React from 'react'
+
 import FooterBottom from './footerBottom/FooterBottom'
 import FooterTop from './footerTop/FooterTop'
+import HelpCenter from './HelpCenter/HelpCenter'
 
 const Footer = () => {
     return (
-        <Container
-            maxW={'container.ls'} 
-            // border={"2px solid red"}
-            >
+        <Box
+            maxW={'container.ls'}
+            maxH={{ base: "auto", 'md': "unset" }}
+            minH={{ base: "fit-content", md: "unset" }}
+            border={"2px solid red"}
+        >
+            <HelpCenter />
             <FooterTop />
             <FooterBottom />
-        </Container>
+        </Box>
     )
 }
 

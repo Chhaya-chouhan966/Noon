@@ -1,4 +1,4 @@
-import { Box, Image, Link, Text, Container, Flex, VStack, Stack, HStack, SimpleGrid, Center } from '@chakra-ui/react'
+import { Box, Image, Link, Text, Flex, VStack,  HStack } from '@chakra-ui/react'
 import React from 'react'
 import facebook from '../../../assets/facebook.svg'
 import twiter from '../../../assets/twiter.svg'
@@ -56,7 +56,7 @@ const FooterTop = () => {
     ]
 
     return (
-        <Box py={3}>
+        <Box py={3}  >
             <HStack
                 justifyContent={"space-between"}
                 spacing={{ base: 1, md: 7, }}
