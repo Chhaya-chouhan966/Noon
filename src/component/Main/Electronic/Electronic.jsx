@@ -42,7 +42,7 @@ const Electronic = () => {
                         fashion.map((product) => {
                             return <Image
                                 alt="/fashion/women-31229/clothing-16021/womens-tops/fashion-women?sort[by]=popularity&amp;sort[dir]=desc"
-                                width="175px"
+                                width="200px"
                                 height="200px"
                                 src={product}
 
