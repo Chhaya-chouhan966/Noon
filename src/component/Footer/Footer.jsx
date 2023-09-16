@@ -4,6 +4,7 @@ import React from 'react'
 import FooterBottom from './footerBottom/FooterBottom'
 import FooterTop from './footerTop/FooterTop'
 import HelpCenter from './HelpCenter/HelpCenter'
+import Description from './ShopingDescription/Description'
 
 const Footer = () => {
     return (
@@ -13,6 +14,7 @@ const Footer = () => {
             minH={{ base: "fit-content", md: "unset" }}
             border={"2px solid red"}
         >
+            <Description />
             <HelpCenter />
             <FooterTop />
             <FooterBottom />
