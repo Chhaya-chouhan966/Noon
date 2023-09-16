@@ -1,6 +1,5 @@
-import { Box, VStack, Flex, Text, Button, Heading, Image, HStack } from '@chakra-ui/react'
+import { Box, VStack, Flex, Text, Button, Heading, Image, HStack, Link, useMediaQuery } from '@chakra-ui/react'
 import React from 'react'
-
 const KidsFashion = () => {
     const fashion = [
         "https://f.nooncdn.com/mpcms/EN0001/assets/0b0fe859-b1e4-4b24-8041-8f017889368b.png?format=avif",
@@ -12,6 +11,11 @@ const KidsFashion = () => {
         "https://f.nooncdn.com/mpcms/EN0001/assets/28082b27-32d3-4108-904d-99bd2160440c.png?format=avif"
 
     ]
+    const [isLargerThan1280] = useMediaQuery('(min-width: 1280px)')
+
+
+
+
     return (
         <Box m={3}>
             <VStack align={"flex-start"}>
@@ -24,14 +28,16 @@ const KidsFashion = () => {
                         filter={"blur(0.4px)"}
                         size={'md'}
                         as={"h2"}>Kid's fashion</Heading >
-                    <Button
-                        filter={"blur(0.5px)"}
-                        fontSize={"14px"}
-                        py={2}
-                        h={"fit-content"}
-                        bg={"white"}
-                        border={"1px solid black"}
-                        borderRadius={"none"}>VIEW ALL</Button>
+                    <Link href='https://www.noon.com/uae-en/lens-store/'>
+                        <Button
+                            filter={"blur(0.5px)"}
+                            fontSize={"14px"}
+                            py={2}
+                            h={"fit-content"}
+                            bg={"white"}
+                            border={"1px solid black"}
+                            borderRadius={"none"}>VIEW ALL</Button>
+                    </Link>
                 </Flex>
 
                 <HStack
@@ -40,13 +46,14 @@ const KidsFashion = () => {
                     align={"flex-start"}>
                     {
                         fashion.map((product) => {
-                            return <Image
+                            return <Link href='https://www.noon.com/uae-en/lens-store/'> <Image
                                 alt="/fashion/women-31229/clothing-16021/womens-tops/fashion-women?sort[by]=popularity&amp;sort[dir]=desc"
                                 width="200px"
                                 height="280px"
                                 src={product}
 
                             />
+                            </Link>
                         })
                     }
                 </HStack>

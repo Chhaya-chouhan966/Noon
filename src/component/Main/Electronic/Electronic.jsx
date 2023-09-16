@@ -1,4 +1,4 @@
-import { Box, VStack, Flex, Text, Button, Heading, Image, HStack } from '@chakra-ui/react'
+import { Box, VStack, Flex, Text, Button, Heading, Image, HStack, Link } from '@chakra-ui/react'
 import React from 'react'
 
 const Electronic = () => {
@@ -13,7 +13,7 @@ const Electronic = () => {
 
     ]
     return (
-        <Box  p={3}  bg={"white"}>
+        <Box p={3} bg={"white"}>
             <VStack align={"flex-start"}>
                 <Flex
                     my={2}
@@ -24,14 +24,16 @@ const Electronic = () => {
                         filter={"blur(0.4px)"}
                         size={'md'}
                         as={"h2"}>Electronic</Heading >
-                    <Button
-                        filter={"blur(0.5px)"}
-                        fontSize={"14px"}
-                        py={2}
-                        h={"fit-content"}
-                        bg={"white"}
-                        border={"1px solid black"}
-                        borderRadius={"none"}>VIEW ALL</Button>
+                    <Link href='https://www.noon.com/uae-en/lens-store/'>
+                        <Button
+                            filter={"blur(0.5px)"}
+                            fontSize={"14px"}
+                            py={2}
+                            h={"fit-content"}
+                            bg={"white"}
+                            border={"1px solid black"}
+                            borderRadius={"none"}>VIEW ALL</Button>
+                    </Link>
                 </Flex>
 
                 <HStack
@@ -40,13 +42,14 @@ const Electronic = () => {
                     align={"flex-start"}>
                     {
                         fashion.map((product) => {
-                            return <Image
+
+                            return <Link href='https://www.noon.com/uae-en/lens-store/'><Image
                                 alt="/fashion/women-31229/clothing-16021/womens-tops/fashion-women?sort[by]=popularity&amp;sort[dir]=desc"
                                 width="200px"
                                 height="200px"
                                 src={product}
-
                             />
+                            </Link>
                         })
                     }
                 </HStack>
