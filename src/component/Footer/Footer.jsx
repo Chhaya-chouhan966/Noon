@@ -12,7 +12,7 @@ const Footer = () => {
             maxW={'container.ls'}
             maxH={{ base: "auto", 'md': "unset" }}
             minH={{ base: "fit-content", md: "unset" }}
-            border={"2px solid red"}
+           
         >
             <Description />
             <HelpCenter />
