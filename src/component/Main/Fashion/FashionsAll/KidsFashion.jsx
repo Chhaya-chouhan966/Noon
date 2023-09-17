@@ -1,4 +1,4 @@
-import { Box, VStack, Flex, Text, Button, Heading, Image, HStack, Link, useMediaQuery } from '@chakra-ui/react'
+import { Box, VStack, Flex, Button, Heading, Image, HStack, Link, } from '@chakra-ui/react'
 import React from 'react'
 const KidsFashion = () => {
     const fashion = [
@@ -11,7 +11,6 @@ const KidsFashion = () => {
         "https://f.nooncdn.com/mpcms/EN0001/assets/28082b27-32d3-4108-904d-99bd2160440c.png?format=avif"
 
     ]
-    const [isLargerThan1280] = useMediaQuery('(min-width: 1280px)')
 
 
 
@@ -45,8 +44,8 @@ const KidsFashion = () => {
                     w={"full"}
                     align={"flex-start"}>
                     {
-                        fashion.map((product) => {
-                            return <Link href='https://www.noon.com/uae-en/lens-store/'> <Image
+                        fashion.map((product ,idx) => {
+                            return <Link  key={idx} href='https://www.noon.com/uae-en/lens-store/'> <Image
                                 alt="/fashion/women-31229/clothing-16021/womens-tops/fashion-women?sort[by]=popularity&amp;sort[dir]=desc"
                                 width="200px"
                                 height="280px"

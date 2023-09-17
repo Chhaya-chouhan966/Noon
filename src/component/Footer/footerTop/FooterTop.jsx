@@ -1,4 +1,4 @@
-import { Box, Image, Link, Text, Flex, VStack,  HStack } from '@chakra-ui/react'
+import { Box, Image, Link, Text, Flex, VStack,  HStack,Stack } from '@chakra-ui/react'
 import React from 'react'
 import facebook from '../../../assets/facebook.svg'
 import twiter from '../../../assets/twiter.svg'
@@ -56,8 +56,9 @@ const FooterTop = () => {
     ]
 
     return (
-        <Box py={3}  >
-            <HStack
+        <Box py={3} border={"2px solid red"}  >
+            <Stack
+                flexDirection={{base:'column', md:"row"}}
                 justifyContent={"space-between"}
                 spacing={{ base: 1, md: 7, }}
                 px={{ base: 2, md: 7 }}
@@ -65,61 +66,61 @@ const FooterTop = () => {
                 <Flex flexDirection={"column"} rowGap={2} >
                     <Text as={"span"} fontSize={"14px"} fontWeight={600}>ELECTRONICS</Text>
                     {
-                        footerProduct.map((ele) => {
-                            return <Text as={"p"} fontSize={"12px"}>{ele}</Text>
+                        footerProduct.map((ele, idx) => {
+                            return <Text key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
                         })
                     }
                 </Flex >
                 <Flex flexDirection={"column"} rowGap={2} >
                     <Text as={"span"} fontSize={"14px"} fontWeight={600}>FASHION</Text>
                     {
-                        footerProduct.map((ele) => {
-                            return <Text as={"p"} fontSize={"12px"}>{ele}</Text>
+                        footerProduct.map((ele, idx) => {
+                            return <Text  key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
                         })
                     }
                 </Flex >
                 <Flex flexDirection={"column"} rowGap={2} >
                     <Text as={"span"} fontSize={"14px"} fontWeight={600}>HOME AND KITCHEN</Text>
                     {
-                        footerProduct.map((ele) => {
-                            return <Text as={"p"} fontSize={"12px"}>{ele}</Text>
+                        footerProduct.map((ele , idx) => {
+                            return <Text  key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
                         })
                     }
                 </Flex >
                 <Flex flexDirection={"column"} rowGap={2} >
                     <Text as={"span"} fontSize={"14px"} fontWeight={600}>Beauty</Text>
                     {
-                        footerProduct.map((ele) => {
-                            return <Text as={"p"} fontSize={"12px"}>{ele}</Text>
+                        footerProduct.map((ele, idx) => {
+                            return <Text  key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
                         })
                     }
                 </Flex >
                 <Flex flexDirection={"column"} rowGap={2} >
                     <Text as={"span"} fontSize={"14px"} fontWeight={600}>Baby & Toys</Text>
                     {
-                        footerProduct.map((ele) => {
-                            return <Text as={"p"} fontSize={"12px"}>{ele}</Text>
+                        footerProduct.map((ele, idx) => {
+                            return <Text  key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
                         })
                     }
                 </Flex >
                 <Flex flexDirection={"column"} rowGap={2} >
                     <Text as={"span"} fontSize={"14px"} fontWeight={600}>Top Brands</Text>
                     {
-                        footerProduct.map((ele) => {
-                            return <Text as={"p"} fontSize={"12px"}>{ele}</Text>
+                        footerProduct.map((ele, idx) => {
+                            return <Text  key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
                         })
                     }
                 </Flex >
                 <Flex flexDirection={"column"} rowGap={2} >
                     <Text as={"span"} fontSize={"14px"} fontWeight={600}>Daily Groceries</Text>
                     {
-                        footerProduct.map((ele) => {
-                            return <Text as={"p"} fontSize={"12px"}>{ele}</Text>
+                        footerProduct.map((ele, idx) => {
+                            return <Text  key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
                         })
                     }
                 </Flex >
 
-            </HStack>
+            </Stack>
             <HStack  justifyContent={"space-around"} py={"60px"}>
 
                 <Flex>
@@ -132,9 +133,9 @@ const FooterTop = () => {
                             columnGap={2}
                             w={"full"}>
                             {
-                                appStoreImage.map((ele) => {
-                                    return <Link href={ele.link}>
-                                        <Image src={ele.image} w={"110px"} />
+                                appStoreImage.map((ele, idx) => {
+                                    return <Link href={ele.link}  key={idx}>
+                                        <Image  src={ele.image} w={"110px"} />
                                     </Link>
                                 })
                             }
@@ -153,8 +154,8 @@ const FooterTop = () => {
                             columnGap={2}
                             w={"full"}>
                             {
-                                mediaConnection.map((ele) => {
-                                    return <Link href={ele.link}>
+                                mediaConnection.map((ele , idx) => {
+                                    return <Link  key={idx} href={ele.link}>
                                         <Image
                                             src={ele.image}
                                             h={"43px"}

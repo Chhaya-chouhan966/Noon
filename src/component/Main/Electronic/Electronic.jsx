@@ -1,7 +1,8 @@
-import { Box, VStack, Flex, Text, Button, Heading, Image, HStack, Link } from '@chakra-ui/react'
-import React from 'react'
+import { Box, VStack, Flex, Button, Heading, Image, HStack, Link } from '@chakra-ui/react'
+import React, { useEffect } from 'react'
 
 const Electronic = () => {
+   
     const fashion = [
         "https://f.nooncdn.com/mpcms/EN0001/assets/a3f8d9ba-91c5-4550-bfb2-5a7ef53d4d6e.png?format=avif",
         "https://f.nooncdn.com/mpcms/EN0001/assets/55d96255-74ae-4aaf-8ac2-c3986190fde4.png?format=avif",
@@ -41,9 +42,9 @@ const Electronic = () => {
                     w={"full"}
                     align={"flex-start"}>
                     {
-                        fashion.map((product) => {
+                        fashion.map((product, idx) => {
 
-                            return <Link href='https://www.noon.com/uae-en/lens-store/'><Image
+                            return <Link key={idx} href='https://www.noon.com/uae-en/lens-store/'><Image
                                 alt="/fashion/women-31229/clothing-16021/womens-tops/fashion-women?sort[by]=popularity&amp;sort[dir]=desc"
                                 width="200px"
                                 height="200px"

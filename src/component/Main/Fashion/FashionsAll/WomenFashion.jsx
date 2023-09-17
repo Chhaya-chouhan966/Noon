@@ -1,4 +1,4 @@
-import { Box, VStack, Flex, Text, Button, Heading, Image, HStack, Link } from '@chakra-ui/react'
+import { Box, VStack, Flex, Button, Heading, Image, HStack, Link } from '@chakra-ui/react'
 import React from 'react'
 
 const WomenFashion = () => {
@@ -42,8 +42,8 @@ const WomenFashion = () => {
                     w={"full"}
                     align={"flex-start"}>
                     {
-                        fashion.map((product) => {
-                            return <Link href='https://www.noon.com/uae-en/lens-store/'> <Image
+                        fashion.map((product, idx) => {
+                            return <Link key={idx} href='https://www.noon.com/uae-en/lens-store/'> <Image
                                 alt="/fashion/women-31229/clothing-16021/womens-tops/fashion-women?sort[by]=popularity&amp;sort[dir]=desc"
                                 width="200px"
                                 height="280px"

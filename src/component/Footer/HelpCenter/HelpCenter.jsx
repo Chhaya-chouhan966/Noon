@@ -33,12 +33,15 @@ const HelpCenter = () => {
         <Box
             bg="#f7f7fa"
             border={"2px solid #eff0f6"}
-             >
+
+        >
 
             <Flex
+                flexDirection={{ base: "column", md: "row" }}
                 justifyContent={"space-between"}
                 px={{ base: 2, md: 7 }}
-                py={4}>
+                py={4}
+                bg={"yellow.100"}>
 
                 <VStack alignItems={"flex-start"} spacing={1}>
                     <Heading as="h6" size="md">We're Always Here To Help</Heading>
@@ -48,7 +51,8 @@ const HelpCenter = () => {
                         fontSize={"14px"}>Reach out to us through any of these support channels</Text>
                 </VStack>
 
-                <HStack spacing={10} >
+                <HStack spacing={10}
+                    flexDirection={{ base: "column", md: "row" }} >
                     {
                         HelpCenterContact.map((ele, index) => {
                             return (
@@ -57,6 +61,7 @@ const HelpCenter = () => {
                                     onMouseEnter={() => setDisabled(index)}
                                     onMouseLeave={() => setDisabled(null)}
                                     opacity={Disabled === index ? 0.4 : 10}
+                                    key={index}
                                 >
                                     <HStack spacing={3}>
                                         <Image

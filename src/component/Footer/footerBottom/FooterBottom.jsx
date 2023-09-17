@@ -23,7 +23,7 @@ const FooterBottom = () => {
         <Box  bg="#f7f7fa" border={"2px solid #eff0f6"}>
 
             <HStack
-                // border={"2px solid green"}
+                border={"2px solid green"}
                 flexDirection={{md:"unset", base:"column"}}
                 justifyContent={{md:"space-between", base:'center'}}
                 alignItems={{md:"flex-start", base:"center"}}
@@ -43,11 +43,12 @@ const FooterBottom = () => {
                 </Tooltip>
                 <Flex columnGap={5}>
                     {
-                        a.map((ele) => {
+                        a.map((ele, idx) => {
                             return <Image
                                 w={"41px"}
                                 h={"26px"}
-                                src={ele} />
+                                src={ele}
+                                key={idx} />
                         })
                     }
 
