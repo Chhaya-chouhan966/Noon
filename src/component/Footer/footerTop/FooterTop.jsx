@@ -1,11 +1,14 @@
-import { Box, Image, Link, Text, Flex, VStack, HStack, Stack } from '@chakra-ui/react'
-import React, { useEffect, useState } from 'react'
+import { Box, Image, Link, Text, Flex, VStack, HStack, Stack, Icon } from '@chakra-ui/react'
+import React, { useState } from 'react'
+import { AddIcon, MinusIcon } from '@chakra-ui/icons'
 import facebook from '../../../assets/facebook.svg'
 import twiter from '../../../assets/twiter.svg'
 import instagram from '../../../assets/instagram.svg'
 import linkedin from '../../../assets/linkedin.svg'
 
+
 const FooterTop = () => {
+    const [plusIcon, setPlusIcon] = useState(false)
     const footerProduct = [
         "Mobiles",
         "Tablets",
@@ -56,7 +59,6 @@ const FooterTop = () => {
     ]
 
     const isMobile = window.innerWidth <= 768
-   
 
 
     return (
@@ -69,26 +71,35 @@ const FooterTop = () => {
                 spacing={{ base: 1, md: 7, }}
                 px={{ base: 2, md: 7 }}
                 my={{ base: "8px", md: "none" }}>
-                
+
                 <Flex flexDirection={"column"} rowGap={2} >
 
                     <HStack justifyContent={{ base: 'space-between', md: "unset" }}>
-                        <Text as={"span"} fontSize={"14px"} fontWeight={600}>ELECTRONICS</Text>
                         <Text
                             as={"span"}
                             fontSize={"14px"}
-                            fontWeight={600}
-                            display={isMobile ? "block" : "none "}
-                        >Tani</Text>
-
-
+                            fontWeight={600}>ELECTRONICS</Text>
+                       
+                        <Icon
+                            as={!plusIcon?AddIcon:MinusIcon}
+                            width={"11px"}
+                            height={"11px"}
+                            display={isMobile ? "block" : "none"}
+                            onClick={() => !plusIcon? setPlusIcon(true):setPlusIcon(false)} 
+                            />
                     </HStack>
                     {
                         footerProduct.map((ele, idx) => {
-                            return <Text key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
+                            return <Text
+                                key={idx}
+                                as={"p"}
+                                fontSize={"12px"}
+                                display={plusIcon ? "block" : "none"}
+                            >{ele}</Text>
                         })
                     }
                 </Flex >
+
                 <Flex flexDirection={"column"} rowGap={2} >
                     <Text as={"span"} fontSize={"14px"} fontWeight={600}>FASHION</Text>
                     {
