@@ -79,14 +79,14 @@ const FooterTop = () => {
                             as={"span"}
                             fontSize={"14px"}
                             fontWeight={600}>ELECTRONICS</Text>
-                       
+
                         <Icon
-                            as={!plusIcon?AddIcon:MinusIcon}
+                            as={!plusIcon ? AddIcon : MinusIcon}
                             width={"11px"}
                             height={"11px"}
                             display={isMobile ? "block" : "none"}
-                            onClick={() => !plusIcon? setPlusIcon(true):setPlusIcon(false)} 
-                            />
+                            onClick={() => !plusIcon ? setPlusIcon(true) : setPlusIcon(false)}
+                        />
                     </HStack>
                     {
                         footerProduct.map((ele, idx) => {
@@ -94,11 +94,22 @@ const FooterTop = () => {
                                 key={idx}
                                 as={"p"}
                                 fontSize={"12px"}
-                                display={plusIcon ? "block" : "none"}
+                                display={!isMobile || (isMobile && plusIcon) ? "block" : "none"}
                             >{ele}</Text>
                         })
                     }
                 </Flex >
+
+               
+                <Flex flexDirection={"column"} rowGap={2} >
+                    <Text as={"span"} fontSize={"14px"} fontWeight={600}>FASHION</Text>
+                    {
+                        footerProduct.map((ele, idx) => {
+                            return <Text key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
+                        })
+                    }
+                </Flex >
+
 
                 <Flex flexDirection={"column"} rowGap={2} >
                     <Text as={"span"} fontSize={"14px"} fontWeight={600}>FASHION</Text>
