@@ -22,7 +22,7 @@ const Description = () => {
     }
 
     return (
-        <Box px={7} bg="#f7f7fa"
+        <Box px={{base:3, md:7}} bg="#f7f7fa"
             py={4}
         >
 

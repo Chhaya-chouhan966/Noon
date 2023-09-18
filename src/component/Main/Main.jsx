@@ -7,7 +7,7 @@ import Banner from './Banner/Banner'
 
 const Main = () => {
     return (
-        <Box px={7} bg={"#f7f7fa"} >
+        <Box px={{base:"none", md:7}} bg={"#f7f7fa"} >
             <Fashion />
             <Electronic />
             <Electronic />

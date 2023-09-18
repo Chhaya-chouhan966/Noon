@@ -85,7 +85,7 @@ const FooterTop = () => {
                 flexDirection={{ base: 'column', md: "row" }}
                 justifyContent={"space-between"}
                 spacing={{ base: 3, md: 7, }}
-                px={7}
+                px={{base:3, md:7}}
                 my={{ base: "12px", md: "none" }}
                 >
 
