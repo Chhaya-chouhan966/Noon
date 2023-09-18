@@ -79,14 +79,15 @@ const FooterTop = () => {
 
 
     return (
-        <Box  py={0} bg={{ base: "#f7f7fa", md: "white" }}>
+        <Box py={0} bg={{ base: "#f7f7fa", md: "white" }}>
             <Stack
                 bg={{ base: "white", md: "unset" }}
                 flexDirection={{ base: 'column', md: "row" }}
                 justifyContent={"space-between"}
                 spacing={{ base: 3, md: 7, }}
-                px={{ base: 2, md: 7 }}
-                my={{ base: "12px", md: "none" }}>
+                px={7}
+                my={{ base: "12px", md: "none" }}
+                >
 
                 <Flex flexDirection={"column"} rowGap={2} >
                     <HStack justifyContent={{ base: 'space-between', md: "unset" }}>
