@@ -28,30 +28,34 @@ const HelpCenter = () => {
             url: "care@noon.com"
         },
     ]
-
+    const isMobile = window.innerWidth <= 768
     return (
         <Box
-            bg="#f7f7fa"
-            border={"2px solid #eff0f6"}
-
+            bg={'#f7f7fa'}
+            border={{ base: "none", md: "2px solid #eff0f6" }}
+            py={{ base: "12px", md: "unset" }}
         >
 
             <Flex
+                bg={{ base: "white", md: "#f7f7fa" }}
                 flexDirection={{ base: "column", md: "row" }}
                 justifyContent={"space-between"}
                 px={{ base: 2, md: 7 }}
                 py={4}
-                bg={"yellow.100"}>
+            >
 
-                <VStack alignItems={"flex-start"} spacing={1}>
-                    <Heading as="h6" size="md">We're Always Here To Help</Heading>
+                <VStack alignItems={{ base: "center", md: "flex-start" }} spacing={1} >
+                    <Heading py={{ base: "12px", md: "unset" }} as="h6" size="md">We're Always Here To Help</Heading>
                     <Text
                         as={"p"}
                         color={"#9399ac"}
-                        fontSize={"14px"}>Reach out to us through any of these support channels</Text>
+                        fontSize={"14px"}
+                        display={isMobile ? "none" : "block"}
+                    >Reach out to us through any of these support channels</Text>
+
                 </VStack>
 
-                <HStack spacing={10}
+                <HStack spacing={{ base: 5, md: 10 }}
                     flexDirection={{ base: "column", md: "row" }} >
                     {
                         HelpCenterContact.map((ele, index) => {

@@ -8,7 +8,16 @@ import linkedin from '../../../assets/linkedin.svg'
 
 
 const FooterTop = () => {
-    const [plusIcon, setPlusIcon] = useState(false)
+    const [plusIcon, setPlusIcon] = useState({
+        section1: false,
+        section2: false,
+        section3: false,
+        section4: false,
+        section5: false,
+        section6: false,
+        section7: false,
+
+    })
     const footerProduct = [
         "Mobiles",
         "Tablets",
@@ -58,34 +67,42 @@ const FooterTop = () => {
         },
     ]
 
+    const IconButton = (section) => {
+        setPlusIcon((prevPlusIcon) => ({
+            ...prevPlusIcon,
+            [section]: !prevPlusIcon[section],
+        }));
+    };
+
     const isMobile = window.innerWidth <= 768
 
 
+
     return (
-        <Box border={"2px solid red"} py={0} bg={{ base: "#f7f7fa", md: "white" }}>
+        <Box  py={0} bg={{ base: "#f7f7fa", md: "white" }}>
             <Stack
                 bg={{ base: "white", md: "unset" }}
-                border={"2px solid blue"}
                 flexDirection={{ base: 'column', md: "row" }}
                 justifyContent={"space-between"}
-                spacing={{ base: 1, md: 7, }}
+                spacing={{ base: 3, md: 7, }}
                 px={{ base: 2, md: 7 }}
-                my={{ base: "8px", md: "none" }}>
+                my={{ base: "12px", md: "none" }}>
 
                 <Flex flexDirection={"column"} rowGap={2} >
-
                     <HStack justifyContent={{ base: 'space-between', md: "unset" }}>
                         <Text
                             as={"span"}
                             fontSize={"14px"}
-                            fontWeight={600}>ELECTRONICS</Text>
+                            fontWeight={{ base: 400, md: 600 }}
+                            textTransform={!isMobile ? "uppercase" : "none"}>Electronics</Text>
+
 
                         <Icon
-                            as={!plusIcon ? AddIcon : MinusIcon}
+                            as={(!plusIcon.section1) ? AddIcon : MinusIcon}
                             width={"11px"}
                             height={"11px"}
                             display={isMobile ? "block" : "none"}
-                            onClick={() => !plusIcon ? setPlusIcon(true) : setPlusIcon(false)}
+                            onClick={() => IconButton("section1")}
                         />
                     </HStack>
                     {
@@ -94,70 +111,189 @@ const FooterTop = () => {
                                 key={idx}
                                 as={"p"}
                                 fontSize={"12px"}
-                                display={!isMobile || (isMobile && plusIcon) ? "block" : "none"}
+                                display={isMobile && (!plusIcon.section1) ? "none" : "block"}
+                                textDecoration={{ base: "underline", md: "none" }}>{ele}</Text>
+                        })
+                    }
+                    <hr />
+                </Flex >
+
+                <Flex flexDirection={"column"} rowGap={2} >
+                    <HStack justifyContent={{ base: 'space-between', md: "unset" }}>
+                        <Text
+                            as={"span"}
+                            fontSize={"14px"}
+                            fontWeight={{ base: 400, md: 600 }}
+                            textTransform={!isMobile ? "uppercase" : "none"}>Fashion</Text>
+
+                        <Icon
+                            as={(!plusIcon.section2) ? AddIcon : MinusIcon}
+                            width={"11px"}
+                            height={"11px"}
+                            display={isMobile ? "block" : "none"}
+                            onClick={() => IconButton("section2")}
+                        />
+                    </HStack>
+                    {
+                        footerProduct.map((ele, idx) => {
+                            return <Text
+                                key={idx}
+                                as={"p"}
+                                fontSize={"12px"}
+                                display={isMobile && (!plusIcon.section2) ? "none" : "block"}
+                                textDecoration={{ base: "underline", md: "none" }}>{ele}</Text>
+                        })
+                    }
+                    <hr />
+                </Flex >
+
+                <Flex flexDirection={"column"} rowGap={2} >
+                    <HStack justifyContent={{ base: 'space-between', md: "unset" }}>
+                        <Text
+                            as={"span"}
+                            fontSize={"14px"}
+                            textTransform={!isMobile ? "uppercase" : 'none'}
+                            fontWeight={{ base: 400, md: 600 }}>Home And Kitchens</Text>
+
+                        <Icon
+                            as={(!plusIcon.section3) ? AddIcon : MinusIcon}
+                            width={"11px"}
+                            height={"11px"}
+                            display={isMobile ? "block" : "none"}
+                            onClick={() => IconButton("section3")}
+                        />
+                    </HStack>
+                    {
+                        footerProduct.map((ele, idx) => {
+                            return <Text
+                                key={idx}
+                                as={"p"}
+                                fontSize={"12px"}
+                                display={isMobile && (!plusIcon.section3) ? "none" : "block"}
+                                textDecoration={{ base: "underline", md: "none" }}
                             >{ele}</Text>
                         })
                     }
-                </Flex >
-
-               
-                <Flex flexDirection={"column"} rowGap={2} >
-                    <Text as={"span"} fontSize={"14px"} fontWeight={600}>FASHION</Text>
-                    {
-                        footerProduct.map((ele, idx) => {
-                            return <Text key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
-                        })
-                    }
+                    <hr />
                 </Flex >
 
 
                 <Flex flexDirection={"column"} rowGap={2} >
-                    <Text as={"span"} fontSize={"14px"} fontWeight={600}>FASHION</Text>
+                    <HStack justifyContent={{ base: 'space-between', md: "unset" }}>
+                        <Text
+                            as={"span"}
+                            fontSize={"14px"}
+                            textTransform={!isMobile ? "uppercase" : 'none'}
+                            fontWeight={{ base: 400, md: 600 }}>Beauty</Text>
+
+                        <Icon
+                            as={(!plusIcon.section4) ? AddIcon : MinusIcon}
+                            width={"11px"}
+                            height={"11px"}
+                            display={isMobile ? "block" : "none"}
+                            onClick={() => IconButton("section4")}
+                        />
+                    </HStack>
                     {
                         footerProduct.map((ele, idx) => {
-                            return <Text key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
+                            return <Text
+                                key={idx}
+                                as={"p"}
+                                fontSize={"12px"}
+                                display={isMobile && (!plusIcon.section4) ? "none" : "block"}
+                                textDecoration={{ base: "underline", md: "none" }}>{ele}</Text>
                         })
                     }
+                    <hr />
                 </Flex >
+
+
                 <Flex flexDirection={"column"} rowGap={2} >
-                    <Text as={"span"} fontSize={"14px"} fontWeight={600}>HOME AND KITCHEN</Text>
+                    <HStack justifyContent={{ base: 'space-between', md: "unset" }}>
+                        <Text
+                            as={"span"}
+                            fontSize={"14px"}
+                            textTransform={!isMobile ? "uppercase" : 'none'}
+                            fontWeight={{ base: 400, md: 600 }}>Baby And Toy</Text>
+
+                        <Icon
+                            as={(!plusIcon.section5) ? AddIcon : MinusIcon}
+                            width={"11px"}
+                            height={"11px"}
+                            display={isMobile ? "block" : "none"}
+                            onClick={() => IconButton("section5")}
+                        />
+                    </HStack>
                     {
                         footerProduct.map((ele, idx) => {
-                            return <Text key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
+                            return <Text
+                                key={idx}
+                                as={"p"}
+                                fontSize={"12px"}
+                                display={isMobile && (!plusIcon.section5) ? "none" : "block"}
+                                textDecoration={{ base: "underline", md: "none" }}>{ele}</Text>
                         })
                     }
+                    <hr />
                 </Flex >
+
                 <Flex flexDirection={"column"} rowGap={2} >
-                    <Text as={"span"} fontSize={"14px"} fontWeight={600}>Beauty</Text>
+                    <HStack justifyContent={{ base: 'space-between', md: "unset" }}>
+                        <Text
+                            as={"span"}
+                            fontSize={"14px"}
+                            fontWeight={{ base: 400, md: 600 }}
+                            textTransform={!isMobile ? "uppercase" : 'none'}>Top Brands</Text>
+
+                        <Icon
+                            as={(!plusIcon.section6) ? AddIcon : MinusIcon}
+                            width={"11px"}
+                            height={"11px"}
+                            display={isMobile ? "block" : "none"}
+                            onClick={() => IconButton("section6")}
+                        />
+                    </HStack>
                     {
                         footerProduct.map((ele, idx) => {
-                            return <Text key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
+                            return <Text
+                                key={idx}
+                                as={"p"}
+                                fontSize={"12px"}
+                                display={isMobile && (!plusIcon.section6) ? "none" : "block"}
+                                textDecoration={{ base: "underline", md: "none" }}>{ele}</Text>
                         })
                     }
+                    <hr />
                 </Flex >
+
                 <Flex flexDirection={"column"} rowGap={2} >
-                    <Text as={"span"} fontSize={"14px"} fontWeight={600}>Baby & Toys</Text>
+                    <HStack justifyContent={{ base: 'space-between', md: "unset" }}>
+                        <Text
+                            as={"span"}
+                            fontSize={"14px"}
+                            fontWeight={{ base: 400, md: 600 }}
+                            textTransform={!isMobile ? "uppercase" : 'none'}
+                        >Daily Groceries</Text>
+
+                        <Icon
+                            as={(!plusIcon.section7) ? AddIcon : MinusIcon}
+                            width={"11px"}
+                            height={"11px"}
+                            display={isMobile ? "block" : "none"}
+                            onClick={() => IconButton("section7")}
+                        />
+                    </HStack>
                     {
                         footerProduct.map((ele, idx) => {
-                            return <Text key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
+                            return <Text
+                                key={idx}
+                                as={"p"}
+                                fontSize={"12px"}
+                                display={isMobile && (!plusIcon.section7) ? "none" : "block"}
+                                textDecoration={{ base: "underline", md: "none" }} >{ele}</Text>
                         })
                     }
-                </Flex >
-                <Flex flexDirection={"column"} rowGap={2} >
-                    <Text as={"span"} fontSize={"14px"} fontWeight={600}>Top Brands</Text>
-                    {
-                        footerProduct.map((ele, idx) => {
-                            return <Text key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
-                        })
-                    }
-                </Flex >
-                <Flex flexDirection={"column"} rowGap={2} >
-                    <Text as={"span"} fontSize={"14px"} fontWeight={600}>Daily Groceries</Text>
-                    {
-                        footerProduct.map((ele, idx) => {
-                            return <Text key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
-                        })
-                    }
+                    <hr />
                 </Flex >
 
             </Stack>
