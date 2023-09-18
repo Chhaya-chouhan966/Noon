@@ -1,5 +1,5 @@
-import { Box, Image, Link, Text, Flex, VStack,  HStack,Stack } from '@chakra-ui/react'
-import React from 'react'
+import { Box, Image, Link, Text, Flex, VStack, HStack, Stack } from '@chakra-ui/react'
+import React, { useEffect, useState } from 'react'
 import facebook from '../../../assets/facebook.svg'
 import twiter from '../../../assets/twiter.svg'
 import instagram from '../../../assets/instagram.svg'
@@ -55,16 +55,34 @@ const FooterTop = () => {
         },
     ]
 
+    const isMobile = window.innerWidth <= 768
+   
+
+
     return (
-        <Box py={3} border={"2px solid red"}  >
+        <Box border={"2px solid red"} py={0} bg={{ base: "#f7f7fa", md: "white" }}>
             <Stack
-                flexDirection={{base:'column', md:"row"}}
+                bg={{ base: "white", md: "unset" }}
+                border={"2px solid blue"}
+                flexDirection={{ base: 'column', md: "row" }}
                 justifyContent={"space-between"}
                 spacing={{ base: 1, md: 7, }}
                 px={{ base: 2, md: 7 }}
-            >
+                my={{ base: "8px", md: "none" }}>
+                
                 <Flex flexDirection={"column"} rowGap={2} >
-                    <Text as={"span"} fontSize={"14px"} fontWeight={600}>ELECTRONICS</Text>
+
+                    <HStack justifyContent={{ base: 'space-between', md: "unset" }}>
+                        <Text as={"span"} fontSize={"14px"} fontWeight={600}>ELECTRONICS</Text>
+                        <Text
+                            as={"span"}
+                            fontSize={"14px"}
+                            fontWeight={600}
+                            display={isMobile ? "block" : "none "}
+                        >Tani</Text>
+
+
+                    </HStack>
                     {
                         footerProduct.map((ele, idx) => {
                             return <Text key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
@@ -75,15 +93,15 @@ const FooterTop = () => {
                     <Text as={"span"} fontSize={"14px"} fontWeight={600}>FASHION</Text>
                     {
                         footerProduct.map((ele, idx) => {
-                            return <Text  key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
+                            return <Text key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
                         })
                     }
                 </Flex >
                 <Flex flexDirection={"column"} rowGap={2} >
                     <Text as={"span"} fontSize={"14px"} fontWeight={600}>HOME AND KITCHEN</Text>
                     {
-                        footerProduct.map((ele , idx) => {
-                            return <Text  key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
+                        footerProduct.map((ele, idx) => {
+                            return <Text key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
                         })
                     }
                 </Flex >
@@ -91,7 +109,7 @@ const FooterTop = () => {
                     <Text as={"span"} fontSize={"14px"} fontWeight={600}>Beauty</Text>
                     {
                         footerProduct.map((ele, idx) => {
-                            return <Text  key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
+                            return <Text key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
                         })
                     }
                 </Flex >
@@ -99,7 +117,7 @@ const FooterTop = () => {
                     <Text as={"span"} fontSize={"14px"} fontWeight={600}>Baby & Toys</Text>
                     {
                         footerProduct.map((ele, idx) => {
-                            return <Text  key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
+                            return <Text key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
                         })
                     }
                 </Flex >
@@ -107,7 +125,7 @@ const FooterTop = () => {
                     <Text as={"span"} fontSize={"14px"} fontWeight={600}>Top Brands</Text>
                     {
                         footerProduct.map((ele, idx) => {
-                            return <Text  key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
+                            return <Text key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
                         })
                     }
                 </Flex >
@@ -115,16 +133,22 @@ const FooterTop = () => {
                     <Text as={"span"} fontSize={"14px"} fontWeight={600}>Daily Groceries</Text>
                     {
                         footerProduct.map((ele, idx) => {
-                            return <Text  key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
+                            return <Text key={idx} as={"p"} fontSize={"12px"}>{ele}</Text>
                         })
                     }
                 </Flex >
 
             </Stack>
-            <HStack  justifyContent={"space-around"} py={"60px"}>
+
+            <HStack
+                bg={{ base: "white", md: "unset" }}
+                flexDirection={{ base: "column", md: "row" }}
+                justifyContent={"space-around"}
+                py={{ base: "0px", md: "60px" }}
+            >
 
                 <Flex>
-                    <VStack>
+                    <VStack >
                         <Text
                             as={"span"}
                             fontSize={"12px"}
@@ -134,8 +158,8 @@ const FooterTop = () => {
                             w={"full"}>
                             {
                                 appStoreImage.map((ele, idx) => {
-                                    return <Link href={ele.link}  key={idx}>
-                                        <Image  src={ele.image} w={"110px"} />
+                                    return <Link href={ele.link} key={idx}>
+                                        <Image src={ele.image} w={"110px"} />
                                     </Link>
                                 })
                             }
@@ -154,12 +178,12 @@ const FooterTop = () => {
                             columnGap={2}
                             w={"full"}>
                             {
-                                mediaConnection.map((ele , idx) => {
-                                    return <Link  key={idx} href={ele.link}>
+                                mediaConnection.map((ele, idx) => {
+                                    return <Link key={idx} href={ele.link}>
                                         <Image
                                             src={ele.image}
-                                            h={"43px"}
-                                            w={"43px"}
+                                            h={{ base: "28px", md: "43px" }}
+                                            w={{ base: "28px", md: "43px" }}
                                             alt={ele.imageName} />
                                     </Link>
                                 })

@@ -19,16 +19,18 @@ const FooterBottom = () => {
         "Terms of Sale",
         "Privacy Policy",
         "Consumer Rights"]
+
+    // isMobile=window.innerWidth<=1024
     return (
-        <Box  bg="#f7f7fa" border={"2px solid #eff0f6"}>
+        <Box bg={{base:"white", md:"#f7f7fa"}} border={{base:"none", md:"2px solid #eff0f6"}} maxH={"auto"} >
 
             <HStack
-                border={"2px solid green"}
-                flexDirection={{md:"unset", base:"column"}}
-                justifyContent={{md:"space-between", base:'center'}}
-                alignItems={{md:"flex-start", base:"center"}}
-                py={"30px"}
-            >
+                flexDirection={{ md: "row", base: "column" }}
+                justifyContent={{ md: "space-between", base: 'center' }}
+                alignItems={{ md: "flex-start", base: "center" }}
+                py={{base:"0px", md:"30px"}}    
+                pb={{base:"20px", md:"0px"}}            >
+                        
                 <Tooltip
                     bg={"white"}
                     boxShadow={"0 0 5px gray"}
@@ -41,7 +43,11 @@ const FooterBottom = () => {
                     placement='top-start'>
                     <Button bg={"none"} fontSize={"12px"} color={"#7E859B"}>© 2023 noon. All Rights Reserved</Button>
                 </Tooltip>
-                <Flex columnGap={5}>
+                <Flex
+                    w={{ base: "full", 'md': "unset" }}
+                    justifyContent={{ base: "space-evenly", md: "unset" }}
+                    columnGap={{ base: 1, md: 5 }}
+                >
                     {
                         a.map((ele, idx) => {
                             return <Image
@@ -53,7 +59,12 @@ const FooterBottom = () => {
                     }
 
                 </Flex>
-                <Flex fontSize={"12px"} columnGap={3}>
+                <Flex
+                    flexWrap={{ base: "wrap", md: "unset" }}
+                    justifyContent={{ base: "center", md: "space-between" }}
+                    fontSize={"12px"}
+                    gap={{ base: "1", md: "3" }}
+                    >
                     {items.map((item, index) => (
                         <Text
                             key={index}
