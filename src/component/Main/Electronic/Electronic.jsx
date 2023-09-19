@@ -17,7 +17,7 @@ const Electronic = () => {
         <Box p={3} bg={"white"}>
             <VStack align={"flex-start"}>
                 <Flex
-                    pt={3}
+                    pt={{base:"unset", md:3}}
                     w={"full"}
                     justifyContent={"space-between"}>
                     <Heading
