@@ -38,7 +38,10 @@ const WomenFashion = () => {
                             borderRadius={"none"}>VIEW ALL</Button>
                     </Link>
                 </Flex>
-                <Box maxW={{ base: "100%", md: "unset" }} overflowX={{ base: "scroll", md: "none" }}>
+                <Box 
+                maxW={{ base: "100%", md: "unset" }} 
+                overflowX={{ base: "scroll", md: "none" }}
+                overflow={{base:"block", md:"hidden"}}>
                     <HStack
                         spacing={3}
                         w={{ base: "max-content", md: "full" }}

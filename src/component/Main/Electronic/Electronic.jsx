@@ -38,7 +38,11 @@ const Electronic = () => {
                             borderRadius={"none"}>VIEW ALL</Button>
                     </Link>
                 </Flex>
-                <Box maxW={{ base: "100%", md: "unset" }} overflowX={{ base: "scroll", md: "none" }}>
+                <Box
+                    maxW={{ base: "100%", md: "unset" }}
+                    overflowX={{ base: "scroll", md: "none" }}
+                    overflow={{base:"block", md:"hidden"}}
+                 >
                     <HStack
                         spacing={3}
                         w={{ base: "max-content", md: "full" }}
@@ -49,7 +53,7 @@ const Electronic = () => {
                                 return <Link key={idx} href='https://www.noon.com/uae-en/lens-store/'><Image
                                     alt="/fashion/women-31229/clothing-16021/womens-tops/fashion-women?sort[by]=popularity&amp;sort[dir]=desc"
                                     width={{ base: "90px", md: "200px" }}
-                                    height={{ base: "140x", md: "280px" }}
+                                    height={{ base: "140x", md: "200px" }}
                                     src={product}
                                 />
                                 </Link>
