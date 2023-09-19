@@ -33,8 +33,8 @@ const WomenFashion = () => {
                             h={"fit-content"}
                             px={{base:2, md:'unset'}}
                             bg={"white"}
-                            color={{base:'blue', md:"unset"}}
-                            border={{base:"2px solid blue", md:"1px solid black"}}
+                            color={{base:'#008bff', md:"unset"}}
+                            border={{base:"2px solid #008bff", md:"1px solid black"}}
                             borderRadius={"none"}>VIEW ALL</Button>
                     </Link>
                 </Flex>
