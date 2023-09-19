@@ -11,7 +11,7 @@ function App() {
   
   return (
     <Box className="App"
-    border={"2px solid green"}
+    // border={"2px solid green"}
     >
       {/* <Header /> */}
       <Main />
