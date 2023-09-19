@@ -17,7 +17,7 @@ const WomenFashion = () => {
         <Box mx={3} >
             <VStack align={"flex-start"}>
                 <Flex
-                    my={1}
+                    pt={6}
                     w={"full"}
                     justifyContent={"space-between"}>
                     <Heading
@@ -27,18 +27,18 @@ const WomenFashion = () => {
                         as={"h2"}>Women's fashion</Heading >
                     <Link href='https://www.noon.com/uae-en/lens-store/'>
                         <Button
-                            filter={{base:"none", md:"blur(0.5px)"}}
-                            fontSize={{base:"11px", md:"14px"}}
-                            py={{base:1.5, md:2}}
+                            filter={{ base: "none", md: "blur(0.5px)" }}
+                            fontSize={{ base: "11px", md: "14px" }}
+                            py={{ base: 1.5, md: 2 }}
                             h={"fit-content"}
-                            px={{base:2, md:'unset'}}
+                            px={{ base: 2, md: '2' }}
                             bg={"white"}
-                            color={{base:'#008bff', md:"unset"}}
-                            border={{base:"2px solid #008bff", md:"1px solid black"}}
+                            color={{ base: '#008bff', md: "unset" }}
+                            border={{ base: "2px solid #008bff", md: "1px solid black" }}
                             borderRadius={"none"}>VIEW ALL</Button>
                     </Link>
                 </Flex>
-                <Box  maxW={{ base: "100%", md: "unset" }} overflowX={{ base: "scroll", md: "none" }}>
+                <Box maxW={{ base: "100%", md: "unset" }} overflowX={{ base: "scroll", md: "none" }}>
                     <HStack
                         spacing={3}
                         w={{ base: "max-content", md: "full" }}
