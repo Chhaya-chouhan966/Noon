@@ -14,7 +14,7 @@ const WomenFashion = () => {
 
     ]
     return (
-        <Box mx={3}>
+        <Box mx={3} border={"2px solid red"} >
             <VStack align={"flex-start"}>
                 <Flex
                     my={2}
@@ -36,24 +36,25 @@ const WomenFashion = () => {
                             borderRadius={"none"}>VIEW ALL</Button>
                     </Link>
                 </Flex>
-
-                <HStack
-                    spacing={3}
-                    w={"full"}
-                    align={"flex-start"}>
-                    {
-                        fashion.map((product, idx) => {
-                            return <Link key={idx} href='https://www.noon.com/uae-en/lens-store/'> <Image
-                                alt="/fashion/women-31229/clothing-16021/womens-tops/fashion-women?sort[by]=popularity&amp;sort[dir]=desc"
-                                width="200px"
-                                height="280px"
-                                src={product}
-
-                            />
-                            </Link>
-                        })
-                    }
-                </HStack>
+                <Box border={"2px solid red"} maxW={{ base: "100%", md: "unset" }} overflowX={{ base: "scroll", md: "none" }}>
+                    <HStack
+                        border={"2px solid blue"}
+                        spacing={3}
+                        w={{ base: "max-content", md: "full" }}
+                        align={"flex-start"}>
+                        {
+                            fashion.map((product, idx) => {
+                                return <Link key={idx} href='https://www.noon.com/uae-en/lens-store/'> <Image
+                                    alt="/fashion/women-31229/clothing-16021/womens-tops/fashion-women?sort[by]=popularity&amp;sort[dir]=desc"
+                                    width={{ base: "200px", md: "200px" }}
+                                    height="280px"
+                                    src={product}
+                                />
+                                </Link>
+                            })
+                        }
+                    </HStack>
+                </Box>
             </VStack>
         </Box>
     )
