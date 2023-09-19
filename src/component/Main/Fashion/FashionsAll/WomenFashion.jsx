@@ -46,8 +46,8 @@ const WomenFashion = () => {
                             fashion.map((product, idx) => {
                                 return <Link key={idx} href='https://www.noon.com/uae-en/lens-store/'> <Image
                                     alt="/fashion/women-31229/clothing-16021/womens-tops/fashion-women?sort[by]=popularity&amp;sort[dir]=desc"
-                                    width={{ base: "100px", md: "200px" }}
-                                    height={{ base: "150px", md: "280px" }}
+                                    width={{ base: "90px", md: "200px" }}
+                                    height={{ base: "130px", md: "280px" }}
                                     src={product}
                                 />
                                 </Link>
