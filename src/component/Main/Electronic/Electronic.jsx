@@ -2,7 +2,7 @@ import { Box, VStack, Flex, Button, Heading, Image, HStack, Link } from '@chakra
 import React, { useEffect } from 'react'
 
 const Electronic = () => {
-   
+
     const fashion = [
         "https://f.nooncdn.com/mpcms/EN0001/assets/a3f8d9ba-91c5-4550-bfb2-5a7ef53d4d6e.png?format=avif",
         "https://f.nooncdn.com/mpcms/EN0001/assets/55d96255-74ae-4aaf-8ac2-c3986190fde4.png?format=avif",
@@ -17,43 +17,46 @@ const Electronic = () => {
         <Box p={3} bg={"white"}>
             <VStack align={"flex-start"}>
                 <Flex
-                    my={2}
+                    pt={3}
                     w={"full"}
                     justifyContent={"space-between"}>
                     <Heading
                         color={"#5a5a62"}
-                        filter={"blur(0.4px)"}
-                        size={'md'}
+                        filter={{ base: "none", md: "blur(0.4px)" }}
+                        size={{ base: "sm", md: "md" }}
                         as={"h2"}>Electronic</Heading >
                     <Link href='https://www.noon.com/uae-en/lens-store/'>
                         <Button
-                            filter={"blur(0.5px)"}
-                            fontSize={"14px"}
-                            py={2}
+                            filter={{ base: "none", md: "blur(0.5px)" }}
+                            fontSize={{ base: "11px", md: "14px" }}
+                            py={{ base: 1.5, md: 2 }}
                             h={"fit-content"}
+                            px={{ base: 2, md: '2' }}
                             bg={"white"}
-                            border={"1px solid black"}
+                            color={{ base: '#008bff', md: "unset" }}
+                            border={{ base: "2px solid #008bff", md: "1px solid black" }}
                             borderRadius={"none"}>VIEW ALL</Button>
                     </Link>
                 </Flex>
+                <Box maxW={{ base: "100%", md: "unset" }} overflowX={{ base: "scroll", md: "none" }}>
+                    <HStack
+                        spacing={3}
+                        w={{ base: "max-content", md: "full" }}
+                        align={"flex-start"}>
+                        {
+                            fashion.map((product, idx) => {
 
-                <HStack
-                    spacing={3}
-                    w={"full"}
-                    align={"flex-start"}>
-                    {
-                        fashion.map((product, idx) => {
-
-                            return <Link key={idx} href='https://www.noon.com/uae-en/lens-store/'><Image
-                                alt="/fashion/women-31229/clothing-16021/womens-tops/fashion-women?sort[by]=popularity&amp;sort[dir]=desc"
-                                width="200px"
-                                height="200px"
-                                src={product}
-                            />
-                            </Link>
-                        })
-                    }
-                </HStack>
+                                return <Link key={idx} href='https://www.noon.com/uae-en/lens-store/'><Image
+                                    alt="/fashion/women-31229/clothing-16021/womens-tops/fashion-women?sort[by]=popularity&amp;sort[dir]=desc"
+                                    width={{ base: "90px", md: "200px" }}
+                                    height={{ base: "140x", md: "280px" }}
+                                    src={product}
+                                />
+                                </Link>
+                            })
+                        }
+                    </HStack>
+                </Box>
             </VStack>
         </Box>
     )
