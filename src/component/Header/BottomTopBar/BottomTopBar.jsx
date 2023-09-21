@@ -12,7 +12,7 @@ const BottomTopBar = () => {
     return (
         <Flex
             // border={"2px solid red"}
-            h={{base:"15vh",md:"7vh"}}
+            h={{base:"10vh",md:"7vh"}}
             bg={"#fcfbf4"}
             justifyContent={"space-between"}
         >

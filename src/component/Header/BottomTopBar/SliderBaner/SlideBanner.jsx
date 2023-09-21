@@ -23,7 +23,7 @@ const SlideBanner = () => {
                 justify="center"
                 align={"center"}
                 border={`2px solid red`}
-                py={{ md: 3, base: 1 }}
+                py={{ md: 3, base: 0 }}
             >
                 <Link
                     // border={"2px solid blue"}
