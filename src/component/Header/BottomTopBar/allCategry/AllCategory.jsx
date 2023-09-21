@@ -77,6 +77,7 @@ const AllCategory = () => {
                 onMouseLeave={handleMouseLeave}
                 h={'full'}
                 w={"200px"}
+                display={{base:"none", md:"block"}}
             >
                 <Flex gap={7}
                     h={"full"}

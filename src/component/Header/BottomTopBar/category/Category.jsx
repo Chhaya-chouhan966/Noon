@@ -29,7 +29,7 @@ const Category = () => {
       }}
       id="menuScroll"
       w={"auto"}
-      display={"flex"}
+      display={{base:"none", md:"flex"}}
       justifyContent={"center"}
       alignContent={"center"}
     >
