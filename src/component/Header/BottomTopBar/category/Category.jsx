@@ -33,37 +33,16 @@ const Category = () => {
   }
 
   return (
-    // <Flex
-    //   border={"2px solid red"}
-    //   h={"7vh"}
-    //   w={"900px"}
-    //   justify={"center"}
-    //   align={"center"}
-
-    // >
-    //   {
-    //     leftIcon && <ChevronLeftIcon fontSize={"20px"} onClick={showLeftIcon} />
-    //   }
-
-    //   <HStack whiteSpace={"nowrap"} overflowX={"auto"} css={{
-    //     overflow: "hidden"
-    //   }} border={"2px solid blue"} >
-    //     {allCategories.map((category, index) => (
-    //       <Link border={"2px solid green"} textTransform={"uppercase"} key={index} px={2} fontSize="13px" fontWeight="700">
-    //         {category}
-    //       </Link>
-    //     ))}
-    //   </HStack>
-    //   {
-    //     rightIcon && <ChevronRightIcon fontSize={"20px"} onClick={showRightIcon} />
-    //   }
-    // </Flex>
-
-
-
-
     <Box border="2px solid red" style={{ overflowX: "scroll", }}
       whiteSpace={"nowrap"}
+      css={{
+        "&::-webkit-scrollbar": {
+          width: "0",
+        },
+      }}
+      display={"flex"}
+      justifyContent={"center"}
+      alignContent={"center"}
     >
       <HStack w={"max-content"} border={"2px solid blue"}>
         {allCategories.map((category, index) => (
