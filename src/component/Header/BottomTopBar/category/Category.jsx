@@ -47,7 +47,7 @@ const Category = () => {
       alignContent={"center"}
     >
       
-      <HStack ml={10} whiteSpace={"nowrap"} w={"max-content"} border={"2px solid blue"}>
+      <HStack  whiteSpace={"nowrap"} w={"max-content"} border={"2px solid blue"}>
         {allCategories.map((category, index) => (
           <Link
             h={"full"}
