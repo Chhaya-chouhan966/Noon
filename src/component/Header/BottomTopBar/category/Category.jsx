@@ -1,39 +1,28 @@
-import { Box, Flex, Text, HStack, Link } from "@chakra-ui/react";
-import { useState } from "react";
-import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
-import './Product/allProduct.css'
+import { Box, HStack } from '@chakra-ui/react'
+import React from 'react'
+import AllProduct from './Product/AllProduct'
+import './category.css'
 
 const Category = () => {
-  const [leftIcon, setLeftIcon] = useState(true);
-  const [rightIcon, setRightIcon] = useState(false);
 
-  const allCategories = [
-    "Electronics",
-    "Men",
-    "Women",
-    "Home",
-    "Beauty & Fragrance",
-    "Baby",
-    "Toys",
-    "Sports",
+  const categories = [
+    "Electronics & Mobiles",
+    "Beauty & Fragrances",
+    "Fashion",
+    "Home & Kitchen",
+    "Sports & Outdoors",
+    "Toys & Games",
+    "Baby Products",
     "Health & Nutrition",
-    "Bestsellers",
-    "Sell on noon",
+    "Automotive",
+    "Tools & Home Improvement",
+    "Pet Supplies",
+    "Office Supplies & Stationery",
+    "Music, Movies & TV Shows",
+    "Mahali",
   ];
-  const initialCategoriesToShow = allCategories.slice(0, 10);
-
-  const showLeftIcon = () => {
-    setLeftIcon(false)
-    setRightIcon(true)
-  }
-
-  const showRightIcon = () => {
-    setRightIcon(false)
-    setLeftIcon(true)
-  }
-
   return (
-    <Box  border="2px solid red" style={{ overflowX: "auto", }}
+    <Box style={{ overflowX: "auto", }}
       css={{
         "&::-webkit-scrollbar": {
           width: "0",
@@ -45,10 +34,11 @@ const Category = () => {
       justifyContent={"center"}
       alignContent={"center"}
     >
-      
-      <HStack  whiteSpace={"nowrap"} w={"max-content"}>
-        {allCategories.map((category, index) => (
-          <Link
+
+      <HStack whiteSpace={"nowrap"} w={"max-content"}>
+        {categories.map((category, index) => (
+          <Box
+            textDecoration={"none"}
             h={"full"}
             textTransform={"uppercase"}
             key={index}
@@ -58,17 +48,15 @@ const Category = () => {
             display={"flex"}
             justifyContent={"center"}
             alignItems={"center"}
+            _hover={{ bg: "white", boxShadow: "0 0 5px black" }}
 
           >
             {category}
-          </Link>
+          </Box>
         ))}
       </HStack>
     </Box>
+  )
+}
 
-  );
-};
-export default Category;
-
-
-
+export default Category
