@@ -12,6 +12,6 @@
   overflow-x: unset;
   }
 
-  #menuScroll::-webkit-scrollbar{
+  /* #menuScroll::-webkit-scrollbar{
     display: none;
-  }
+  } */

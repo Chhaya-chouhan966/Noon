@@ -35,11 +35,11 @@ const Category = () => {
   return (
     <Box  border="2px solid red" style={{ overflowX: "auto", }}
       // whiteSpace={"nowrap"}
-      // css={{
-      //   "&::-webkit-scrollbar": {
-      //     width: "0",
-      //   },
-      // }}
+      css={{
+        "&::-webkit-scrollbar": {
+          width: "0",
+        },
+      }}
       id="menuScroll"
       w={"auto"}
       display={"flex"}
@@ -47,11 +47,11 @@ const Category = () => {
       alignContent={"center"}
     >
       
-      <HStack  whiteSpace={"nowrap"} w={"max-content"} border={"2px solid blue"}>
+      <HStack  whiteSpace={"nowrap"} w={"max-content"}>
         {allCategories.map((category, index) => (
           <Link
             h={"full"}
-            border={"2px solid green"}
+            // border={"2px solid green"}
             textTransform={"uppercase"}
             key={index}
             px={2}
