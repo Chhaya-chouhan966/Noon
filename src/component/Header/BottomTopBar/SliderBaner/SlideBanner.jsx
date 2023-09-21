@@ -1,17 +1,37 @@
-import { Box, Flex } from '@chakra-ui/react'
+import { Box, Flex, Image, Text, Link, Icon } from '@chakra-ui/react'
+import { ChevronRightIcon } from '@chakra-ui/icons'
 import React from 'react'
 const SlideBanner = () => {
+    const linearGradient = "linear-gradient(red, yellow 10%, green 20%)";
     return (
         <Box
-            border={"2px solid green"}
+            bg={"#fcfbf4"}
             h={"full"}
+            w={"auto"}
             display={"flex"}
             justifyContent={"center"}
             alignItems={"center"}
-            px={"10px"}
+            p={2}
         >
-            Categoryn,mnkjbjhb nj
-            
+            <Flex
+               border={"2px solid yellow"}
+               borderRadius={"5px"}
+                h={'full'}
+                my={3}
+                w={'auto'}
+                justify={"center"}
+                align={"center"}
+
+            >
+                <Link display={"flex"} justifyContent={"center"} alignItems={"center"} gap={1}>
+                    <Text>noon</Text>
+                    <Text as="span">one</Text>
+                    <Text color={"green"} fontWeight={"600"}>TryFree</Text>
+                    <Icon color={"red"} as={ChevronRightIcon} />
+                </Link>
+
+            </Flex>
+
         </Box>
     )
 }

@@ -1,6 +1,5 @@
 import { Box, HStack } from '@chakra-ui/react'
 import React from 'react'
-import AllProduct from './Product/AllProduct'
 import './category.css'
 
 const Category = () => {
@@ -38,7 +37,6 @@ const Category = () => {
       <HStack whiteSpace={"nowrap"} w={"max-content"}>
         {categories.map((category, index) => (
           <Box
-            textDecoration={"none"}
             h={"full"}
             textTransform={"uppercase"}
             key={index}
