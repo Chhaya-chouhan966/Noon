@@ -34,7 +34,6 @@ const Category = () => {
 
   return (
     <Box  border="2px solid red" style={{ overflowX: "auto", }}
-      // whiteSpace={"nowrap"}
       css={{
         "&::-webkit-scrollbar": {
           width: "0",
@@ -51,11 +50,10 @@ const Category = () => {
         {allCategories.map((category, index) => (
           <Link
             h={"full"}
-            // border={"2px solid green"}
             textTransform={"uppercase"}
             key={index}
             px={2}
-            fontSize="13px"
+            fontSize="14px"
             fontWeight="700"
             display={"flex"}
             justifyContent={"center"}
