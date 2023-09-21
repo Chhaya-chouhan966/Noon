@@ -72,11 +72,12 @@ const AllCategory = () => {
 
         <Box position="relative">
             <Box
-            // border={"2px solid red"}
+                // border={"2px solid red"}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 h={'full'}
-                maxW={"auto"}>
+                w={"200px"}
+            >
                 <Flex gap={7}
                     h={"full"}
                     fontWeight={700}
@@ -95,7 +96,7 @@ const AllCategory = () => {
                         w="28px"
                         h="28px"
                         color="blue"
-                        
+
                     />
                 </Flex>
 
