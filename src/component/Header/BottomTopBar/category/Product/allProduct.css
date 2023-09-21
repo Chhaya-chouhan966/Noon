@@ -12,3 +12,6 @@
   overflow-x: unset;
   }
 
+  ::-webkit-scrollbar{
+    display: none;
+  }

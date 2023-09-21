@@ -18,9 +18,7 @@ import './allCategory.css'
 
 
 const AllCategory = () => {
-    const { onOpen, onClose } = useDisclosure();
     const [open, setOpen] = useState(false);
-    const buttonRef = useRef(null);
     const [selectedCategory, setSelectedCategory] = useState("Electronics & Mobiles")
 
     useEffect(() => {
@@ -32,7 +30,6 @@ const AllCategory = () => {
     }, [open]);
 
     const handleMouseEnter = () => {
-        buttonRef.current.style.backgroundColor = '#fcfbf4'
         setOpen(true);
     };
 
@@ -72,135 +69,122 @@ const AllCategory = () => {
     ]
 
     return (
-        <>
-            <Container
-                display="flex"
-                flexDirection="column"
-                // border="2px solid blue"
-                maxW={"210px"}
-                h="7vh"
-                position="relative"
-            >
-                <Box
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                    // borderRight={"0.5px solid gray"}
-                    // borderRadius={"none"}
-                    // border="2px solid red"
-                    >
-                    <Button
-                    //  border={"2px solid green"}
-                        ref={buttonRef}
-                        mr="-5px"
-                        bg="none"
-                        w="100%"
-                        h="40px" // Set a fixed height for the button
-                        mx={0}
-                        display="flex"
-                        justifyContent="space-between"
-                        alignItems="center"
-                        fontWeight={700}
-                        fontSize="14px"
+
+        <Box position="relative">
+            <Box
+            // border={"2px solid red"}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                h={'full'}
+                maxW={"auto"}>
+                <Flex gap={7}
+                    h={"full"}
+                    fontWeight={700}
+                    fontSize="14px"
+                    color="blue"
+                    position="relative"
+                    pl={5}
+                    justify={"center"}
+                    alignItems={"center"}
+                    borderRight={"1px solid gray"}
+                >
+                    ALL CATEGORIES
+                    <Image
+                        src={dropDown}
+                        alt="Your Image Alt Text"
+                        w="28px"
+                        h="28px"
                         color="blue"
-                        position="relative"
-                        px={0}
+                        
+                    />
+                </Flex>
 
-                    >
-                        ALL CATEGORIES
-                        <Image
-                            src={dropDown}
-                            alt="Your Image Alt Text"
-                            w="28px"
-                            h="28px"
-                            color="blue"
-                        />
-                    </Button>
+            </Box>
 
+            <Box
+                mt="10px"
+                // border="2px solid red"
+                position="absolute"
+                top="30px"
+                left="0"
+                width="650px"
+                display={open ? 'flex' : 'none'}
 
-                    <Box
-                        mt="10px"
-                        // border="2px solid red"
-                        position="absolute"
-                        top="30px"
-                        left="0"
-                        width="650px"
-                        display={open ? 'flex' : 'none'}
+            >
+                <Flex
 
-                    >
-                        <Flex
+                    flexDirection={"column"}
+                    // border="2px solid blue"
+                    w={"31.5%"}
+                    borderRight={"0.5px solid gray"}
+                    fontSize={"12px"}
+                    fontWeight={400}
+                    pt={"10px"}
+                    bg={"#fcfbf4"}
+                    pl={"14px"}
 
-                            flexDirection={"column"}
-                            // border="2px solid blue"
-                            w={"31.5%"}
-                            borderRight={"0.5px solid gray"}
-                            fontSize={"12px"}
-                            fontWeight={400}
-                            pt={"10px"}
-                            bg={"#fcfbf4"}
-                            pl={"14px"}
+                >
 
-                        >
+                    {categories.map((ele) => {
+                        return <Text
+                            _hover={{ color: "blue" }}
+                            p={"8px 0px"}
+                            onMouseEnter={() => setSelectedCategory(ele)}
 
-                            {categories.map((ele) => {
-                                return <Text
-                                    _hover={{ color: "blue" }}
-                                    p={"8px 0px"}
-                                    onMouseEnter={() => setSelectedCategory(ele)}
-                                    
-                                >{ele}</Text>
-                            })}
+                        >{ele}</Text>
+                    })}
 
 
-                        </Flex>
-                        <Flex
-                            flexDirection={"column"}
-                            w={"68.5%"}
-                            bg={"#ffffff"}
-                        >
+                </Flex>
+                <Flex
+                    flexDirection={"column"}
+                    w={"68.5%"}
+                    bg={"#ffffff"}
+                >
 
 
-                            <Text
-                                as={"h2"}
-                                fontWeight={"500"}
-                                h={"50px"}
-                                // border={"2px solid red"}
-                                pl={"12px"}
-                                display={"flex"}
-                                alignItems={"center"}
-                            >Beauty & Fragrances</Text>
-                            <Divider width="90%" color="blue" mx={"12px"} />
+                    <Text
+                        as={"h2"}
+                        fontWeight={"500"}
+                        h={"50px"}
+                        // border={"2px solid red"}
+                        pl={"12px"}
+                        display={"flex"}
+                        alignItems={"center"}
+                    >Beauty & Fragrances</Text>
+                    <Divider width="90%" color="blue" mx={"12px"} />
 
-                            <Flex pl={"12px"} mt={"10px"}>
+                    <Flex pl={"12px"} mt={"10px"}>
 
-                                <Box w={"50%"}>
-                                    <Text as={"p"} fontSize={"14px"} fontWeight={"500"}>Top Brand</Text>
-                                    {selectedCategory === "Electronics & Mobiles" &&
-                                        ElectronicProducts.map((ele) => {
-                                            return <Text
-                                                _hover={{ color: "blue" }}
-                                                mt={"10px"}
-                                                fontSize={"12px"}>{ele}</Text>
-                                        })}
-                                </Box>
+                        <Box w={"50%"}>
+                            <Text as={"p"} fontSize={"14px"} fontWeight={"500"}>Top Brand</Text>
+                            {selectedCategory === "Electronics & Mobiles" &&
+                                ElectronicProducts.map((ele) => {
+                                    return <Text
+                                        _hover={{ color: "blue" }}
+                                        mt={"10px"}
+                                        fontSize={"12px"}>{ele}</Text>
+                                })}
+                        </Box>
 
-                                <Box w={"50%"}>
-                                    <Text fontSize={"14px"} as={"p"} fontWeight={"500"}>Top Brand</Text>
-                                    {selectedCategory === "Electronics & Mobiles" &&
-                                        ElectronicProducts.map((ele) => {
-                                            return <Text 
-                                            _hover={{ color: "blue" }}
-                                            mt={"10px"} 
-                                            fontSize={"12px"}>{ele}</Text>
-                                        })}
-                                </Box>
+                        <Box w={"50%"}>
+                            <Text fontSize={"14px"} as={"p"} fontWeight={"500"}>Top Brand</Text>
+                            {selectedCategory === "Electronics & Mobiles" &&
+                                ElectronicProducts.map((ele) => {
+                                    return <Text
+                                        _hover={{ color: "blue" }}
+                                        mt={"10px"}
+                                        fontSize={"12px"}>{ele}</Text>
+                                })}
+                        </Box>
 
-                            </Flex>
+                    </Flex>
 
-                        </Flex>
-                    </Box>
-                </Box>
-            </Container>
-        </>
+                </Flex>
+
+            </Box>
+        </Box>
+
     );
 };
 

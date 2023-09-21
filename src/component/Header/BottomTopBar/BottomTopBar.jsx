@@ -4,25 +4,24 @@ import {
     Container,
     Flex
 } from '@chakra-ui/react'
+import AllCategory from './allCategry/AllCategory'
 import Category from './category/Category'
 import SlideBanner from './SliderBaner/SlideBanner'
-import AllCategory from './allCategry/AllCategory'
-
 
 const BottomTopBar = () => {
     return (
-        <Box
-            // border={"2px solid red"}
+        <Flex
+            border={"2px solid red"}
             h={"7vh"}
             bg={"#fcfbf4"}
-            px={0}
+            justifyContent={"space-between"}
         >
-            <Flex>
+           
                 <AllCategory />
                 <Category />
                 <SlideBanner />
-            </Flex>
-        </Box>
+          
+        </Flex>
     )
 }
 

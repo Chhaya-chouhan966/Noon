@@ -2,17 +2,17 @@ import { Box, Flex } from '@chakra-ui/react'
 import React from 'react'
 const SlideBanner = () => {
     return (
-        <Flex
-            // border={"2px solid green"}
-            // w={"15%"}
-            h={"7vh"}
+        <Box
+            border={"2px solid green"}
+            h={"full"}
+            display={"flex"}
             justifyContent={"center"}
             alignItems={"center"}
-            px={"80px"}
+            px={"10px"}
         >
-            Category
+            Categoryn,mnkjbjhb nj
             
-        </Flex>
+        </Box>
     )
 }
 

@@ -8,12 +8,12 @@ import { useEffect, useState } from 'react';
 
 
 function App() {
-  
+
   return (
     <Box className="App"
     // border={"2px solid green"}
     >
-      {/* <Header /> */}
+      <Header />
       <Main />
       <Footer />
 
