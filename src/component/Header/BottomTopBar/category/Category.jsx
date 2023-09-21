@@ -33,26 +33,34 @@ const Category = () => {
   }
 
   return (
-    <Box border="2px solid red" style={{ overflowX: "scroll", }}
-      whiteSpace={"nowrap"}
-      css={{
-        "&::-webkit-scrollbar": {
-          width: "0",
-        },
-      }}
+    <Box  border="2px solid red" style={{ overflowX: "auto", }}
+      // whiteSpace={"nowrap"}
+      // css={{
+      //   "&::-webkit-scrollbar": {
+      //     width: "0",
+      //   },
+      // }}
+      id="menuScroll"
+      w={"auto"}
       display={"flex"}
       justifyContent={"center"}
       alignContent={"center"}
     >
-      <HStack w={"max-content"} border={"2px solid blue"}>
+      
+      <HStack ml={10} whiteSpace={"nowrap"} w={"max-content"} border={"2px solid blue"}>
         {allCategories.map((category, index) => (
           <Link
+            h={"full"}
             border={"2px solid green"}
             textTransform={"uppercase"}
             key={index}
             px={2}
             fontSize="13px"
             fontWeight="700"
+            display={"flex"}
+            justifyContent={"center"}
+            alignItems={"center"}
+
           >
             {category}
           </Link>
