@@ -11,19 +11,22 @@ import {
     Button,
     Flex,
     Image,
+    Text
 } from "@chakra-ui/react";
 
 const Cart = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
         <Flex
+            display={{ base: "none", md: "block" }}
             justifyContent={"space-evenly"}
             alignItems={"center"}
             h={"32px"}
-        // border={"2px solid red"}
+            // border={"2px solid red"}
+            onClick={onOpen}
         >
             <Button
-                onClick={onOpen}
+
                 h={"32px"}
                 bg={"none"}
                 className='Sign'
@@ -31,8 +34,10 @@ const Cart = () => {
                 color={"404553"}
                 fontWeight={"500"}
                 px={1}
-            >Cart</Button>
-            <Image src="https://f.nooncdn.com/s/app/com/noon/icons/cart.svg" h={"17px"} w={"17px"} />
+            >
+                <Text>Cart</Text>
+                <Image src="https://f.nooncdn.com/s/app/com/noon/icons/cart.svg" h={"17px"} w={"17px"} />
+            </Button>
 
             <Modal
                 isCentered
@@ -40,7 +45,7 @@ const Cart = () => {
                 isOpen={isOpen}
                 motionPreset='slideInBottom'
             >
-                <ModalOverlay/>
+                <ModalOverlay />
                 <ModalContent>
                     <ModalHeader>Modal Title</ModalHeader>
                     <ModalCloseButton />

@@ -11,20 +11,23 @@ import {
     Button,
     Flex,
     Image,
+    Text
 } from "@chakra-ui/react";
 
 const SignIn = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
         <Flex
+            display={{ base: "none", md: "block" }}
+            gap={2}
             justifyContent={"space-evenly"}
             alignItems={"center"}
             h={"32px"}
-        // border={"2px solid red"}
-
+            // border={"2px solid red"}
+            onClick={onOpen}
         >
             <Button
-                onClick={onOpen}
+
                 h={"32px"}
                 bg={"none"}
                 className='Sign'
@@ -32,8 +35,10 @@ const SignIn = () => {
                 color={"404553"}
                 fontWeight={"500"}
                 px={1}
-            >Sign In</Button>
-            <Image src="https://f.nooncdn.com/s/app/com/noon/icons/user_thin.svg" h={"17px"} w={"17px"} />
+            >
+                <Text>Sign In</Text>
+                <Image src="https://f.nooncdn.com/s/app/com/noon/icons/user_thin.svg" h={"17px"} w={"17px"} />
+            </Button>
 
             <Modal
                 isCentered

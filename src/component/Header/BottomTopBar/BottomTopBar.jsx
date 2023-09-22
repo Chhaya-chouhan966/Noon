@@ -11,7 +11,6 @@ import SlideBanner from './SliderBaner/SlideBanner'
 const BottomTopBar = () => {
     return (
         <Flex
-            // border={"2px solid red"}
             h={{base:"10vh",md:"7vh"}}
             bg={"#fcfbf4"}
             justifyContent={"space-between"}

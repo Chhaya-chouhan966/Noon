@@ -11,6 +11,7 @@ import {
     Button,
     Flex,
     Image,
+    Text,
 } from "@chakra-ui/react";
 
 const Whishlist = () => {
@@ -22,10 +23,11 @@ const Whishlist = () => {
             justifyContent={"space-evenly"}
             alignItems={"center"}
             h={"32px"}
-        // border={"2px solid red"}
+            // border={"2px solid red"}
+            onClick={onOpen}
         >
             <Button
-                onClick={onOpen}
+                gap={2}
                 h={"32px"}
                 bg={"none"}
                 className='Sign'
@@ -33,13 +35,16 @@ const Whishlist = () => {
                 color={"404553"}
                 fontWeight={"500"}
                 px={1}
-            >Whishlist</Button>
-            <Image src=" https://f.nooncdn.com/s/app/com/noon/icons/wishlist.svg" h={"17px"} w={"17px"} />
+            >
+                <Text display={{ base: "none", md: "block" }}> Whishlist</Text>
+                <Image src=" https://f.nooncdn.com/s/app/com/noon/icons/wishlist.svg" h={"17px"} w={"17px"} />
+            </Button>
 
             <Modal
                 isCentered
                 onClose={onClose}
                 isOpen={isOpen}
+                size={{base:'sm', md:"md"}}
                 motionPreset='slideInBottom'>
 
                 < ModalOverlay />
